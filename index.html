@@ -1,28 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ITF-WEB</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <p>68070001</p>
-            <h2>ITF Website</h2>
-            <h3>Week 14</h3>
-        </nav>
-        <div class="container">
-            <div>
-                <h2 id="my-title">Welcome to my ITF Website!</h2>
-                <img src="panda.png" width="96" height="500" alt="Panda" />
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ITF Simple Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="left">68070001</div>
+        <div class="center">ITF Website</div>
+        <div class="right">Week 14</div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="panda.png" alt="Bank Logo" class="logo">
+        <div>
+            <h1>ITF Simple Bank</h1>
+            <p>Welcome to my first HTML + CSS + JS website!</p>
+        </div>
+    </header>
+
+    <!-- Transaction History -->
+    <section class="history-section">
+        <textarea id="history" readonly></textarea>
+    </section>
+
+    <!-- Main Content: 2 Columns -->
+    <div class="main">
+        <!-- Left: Account Overview -->
+        <div class="column">
+            <h2>Account Overview</h2>
+
+            <div class="section">
+                <h3>Account Information</h3>
+                <p>Name: Kamoot Kharnboriwarn</p>
+                <p>Type: Savings Account</p>
             </div>
-            <hr>
-            <div>
-                Enter Number : <input type="number" id="myinput" value="0">
-                <button onclick="add()">+1</button>
-                <script src="script.js"></script>
+
+            <div class="section">
+                <h3>Balance Information</h3>
+                <label>Current account balance:</label><br>
+                <input type="number" id="accountBalance" value="1000"><br>
+                <label>Current cash balance:</label><br>
+                <input type="number" id="cashBalance" value="1000"><br>
+                <button onclick="setBalance()">Change</button>
+            </div>
+
+            <div class="section">
+                <h3>Bank Operation</h3>
+                <select id="operation">
+                    <option value="deposit">Deposit</option>
+                    <option value="withdraw">Withdraw</option>
+                </select>
+                <input type="number" id="amount" placeholder="0">
+                <br>
+                <button onclick="proceed()">Proceed</button>
             </div>
         </div>
-    </body>
+
+        <!-- Right: Financial Tools -->
+        <div class="column">
+            <h2>Financial Tools</h2>
+            <div class="section">
+                <h3>Currency Converter</h3>
+                <label>Input balance:</label><br>
+                <input type="number" id="inputCurrency" value="0"><br>
+                <label>Output balance:</label><br>
+                <input type="number" id="outputCurrency" value="0" readonly><br>
+                <label>Input currency:</label>
+                <select id="currencyType">
+                    <option value="USD">USD</option>
+                    <option value="THB">THB</option>
+                </select>
+                <button onclick="convert()">Convert</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
