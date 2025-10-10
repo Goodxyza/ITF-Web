@@ -39,9 +39,9 @@ function convert() {
     let output = 0;
 
     if (type === "USD") {
-        output = input * 36;
+        output = input * 32.07;
     } else {
-        output = input / 36;
+        output = input / 32.07;
     }
     document.getElementById('outputCurrency').value = output.toFixed(2);
     updateHistory("Converted " + input + " " + type + " → " + output.toFixed(2));
